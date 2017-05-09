@@ -18,7 +18,7 @@ public class CirkelTest {
 	
 	
 	
-	@test
+	@Test
 	public void Maak_Cirkel(){
 		Cirkel cirkel= new Cirkel(p1, r1);
 		
@@ -39,17 +39,22 @@ public class CirkelTest {
 	}
 	@Test
 	public void Cirkel_Gelijk()  {
-		assertEquals(new Cirkel(p1, r1),new Cirkel(p1, r1));
+		Cirkel cirkel1 = new Cirkel(p1, r1);
+		Cirkel cirkel2 = new Cirkel(p1, r1);
+		assertTrue(cirkel1.equals(cirkel2));
+			
+		
+		
 	}
-	@Test
+	@Test (expected = DomainException.class)
 	public void Cirkel_Niet_Gelijk_bij_null()  {
 		assertFalse(new Cirkel(p1, r1).equals(null));
 	}
-	@test
+	@Test
 	public void Cirkel_Niet_Gelijk_bij_ander_middelpunt()  {
 		assertFalse(new Cirkel(p1, r1).equals(new Cirkel(p2, r1)));
 	}
-	@test
+	@Test
 	public void Cirkel_Niet_Gelijk_bij_andere_radius()  {
 		assertFalse(new Cirkel(p1, r1).equals(new Cirkel(p1, r4)));
 	}
