@@ -49,7 +49,7 @@ public class Rechthoek {
 
 	@Override
 	public String toString() {
-		return "Rechthoek [breedte=" + breedte + ", hoogte=" + hoogte + ", linkerbovenhoek=" + linkerbovenhoek + "]";
+		return "Rechthoek: positie: "+linkerbovenhoek+" - breedte: "+breedte+ " - hoogte: "+hoogte;
 	}
 	
 	
