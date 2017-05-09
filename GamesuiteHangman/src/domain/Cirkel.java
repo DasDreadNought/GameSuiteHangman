@@ -20,7 +20,7 @@ public class Cirkel {
 	}
 	public void setRadius(int r) {
 		if(r<=0){
-			throw new Exception();
+			throw new DomainException();
 		}else{
 			radius= r;
 		}
