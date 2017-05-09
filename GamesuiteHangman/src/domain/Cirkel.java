@@ -39,6 +39,7 @@ public class Cirkel {
 			
 	}
 	public String toString(){
-		return "Cirkel: middelPunt: ("+ middelpunt.getX() +", "+middelpunt.getY() +") - straal: "+ radius;
+
+		return "Cirkel: middelPunt: "+middelpunt+" - staal: "+ radius;
 	}
 }
