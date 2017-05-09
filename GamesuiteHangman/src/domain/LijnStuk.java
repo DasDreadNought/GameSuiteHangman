@@ -33,9 +33,10 @@ public class LijnStuk {
 		if(o == null){
 			return false;
 		}
-		if(o.getEindPunt().equals(eind) && o.getStartPunt().equals(start) || o.getEindPunt().equals(start) && o.equals(getStartPunt().equals(eind))){
+		if(o.getEindPunt().equals(eind) && o.getStartPunt().equals(start) || o.getEindPunt().equals(start) && o.getStartPunt().equals(eind)){
 			return true;
 		}
+		
 		return false;
 	}
 
