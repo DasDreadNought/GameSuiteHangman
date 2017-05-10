@@ -6,7 +6,7 @@ public class Driehoek {
 	private Punt hoekPunt3;
 
 	
-	public Driehoek(Punt hoekPunt1, Punt hoekPunt2, Punt hoekPunt3) implements Vorm{
+	public Driehoek(Punt hoekPunt1, Punt hoekPunt2, Punt hoekPunt3) extends Vorm{
 		this.setHoekPunten(hoekPunt1, hoekPunt2, hoekPunt3);
 	}
 	public void setHoekPunten(Punt hoekPunt1, Punt hoekPunt2, Punt hoekPunt3){
