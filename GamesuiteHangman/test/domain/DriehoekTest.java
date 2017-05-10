@@ -14,6 +14,7 @@ public class DriehoekTest {
 	private Punt punt3 = new Punt(190, 30);
 	private Punt zelfdeAlsPunt3 = new Punt(190, 30);
 	private Punt verschillendVanPunt3 = new Punt(120, 100);
+	private Omhullende omhullende = new Omhullende(punt1, 180, 20);
 
 	@Test
 	public void Driehoek_moet_DrieHoek_aanmaken_met_gegeven_hoekpunten() {
@@ -64,6 +65,13 @@ public class DriehoekTest {
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		Driehoek drieHoek = new Driehoek(punt1, punt2, punt3);
 		assertFalse(drieHoek.equals(null));
+	}
+	
+	@Test
+	public void getOmhullende_geeft_verwachte_waarden_terug(){
+		Driehoek driehoek = new Driehoek(punt1, punt2, punt3);
+		
+		assertTrue(omhullende.equals(driehoek.getOmhullende()));
 	}
 
 }

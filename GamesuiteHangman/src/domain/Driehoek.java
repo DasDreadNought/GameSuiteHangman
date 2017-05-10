@@ -1,5 +1,7 @@
 package domain;
 
+import java.lang.Math;
+
 public class Driehoek  extends Vorm{
 	private Punt hoekPunt1;
 	private Punt hoekPunt2;
@@ -9,6 +11,7 @@ public class Driehoek  extends Vorm{
 	public Driehoek(Punt hoekPunt1, Punt hoekPunt2, Punt hoekPunt3){
 		this.setHoekPunten(hoekPunt1, hoekPunt2, hoekPunt3);
 	}
+	
 	public void setHoekPunten(Punt hoekPunt1, Punt hoekPunt2, Punt hoekPunt3){
 		if(hoekPunt1==null || hoekPunt2==null || hoekPunt3==null){
 			throw new DomainException();
@@ -24,20 +27,43 @@ public class Driehoek  extends Vorm{
 		this.hoekPunt2 = hoekPunt2;
 		this.hoekPunt3 = hoekPunt3;
 	}
+	
 	public Punt getHoekPunt1(){
 		return this.hoekPunt1;
-		}
+	}
+	
 	public Punt getHoekPunt2(){
 		return this.hoekPunt2;
-		}
+	}
+	
 	public Punt getHoekPunt3(){
 		return this.hoekPunt3;
-		}
+	}
+	
+	public Omhullende getOmhullende(){
+		Punt linkerBovenhoek;
+		int breedte, hoogte, minX, maxX, minY, maxY;
+		minX = Math.min(hoekPunt1.getX(), Math.min(hoekPunt2.getX(), hoekPunt3.getX()));
+		minY = Math.min(hoekPunt1.getY(), Math.min(hoekPunt2.getY(), hoekPunt3.getY()));
+		maxX = Math.max(hoekPunt1.getX(), Math.max(hoekPunt2.getX(), hoekPunt3.getX()));
+		maxY = Math.max(hoekPunt1.getY(), Math.max(hoekPunt2.getY(), hoekPunt3.getY()));
+		
+		linkerBovenhoek = new Punt(minX, minY);
+		breedte = maxX - minX;
+		hoogte = maxY - minY;
+		
+		Omhullende o = new Omhullende(linkerBovenhoek, breedte, hoogte);
+		return o;
+	}
+	
+	@Override
 	public String toString(){
 		return "Driehoek: hoekpunt1: " + this.getHoekPunt1().toString() +
 				" - hoekpunt2: " + this.getHoekPunt2().toString() +
-				" - hoekpunt3: " + this.getHoekPunt3().toString();
+				" - hoekpunt3: " + this.getHoekPunt3().toString()
+				 + super.toString();
 	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if(o instanceof Driehoek&&o!=null){
