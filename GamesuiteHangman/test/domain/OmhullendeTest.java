@@ -8,7 +8,7 @@ import org.junit.Test;
 public class OmhullendeTest {
 
 	private Punt linkerBovenhoek;
-	private int breedte, hoogte;
+	private int breedte, hoogte, maxX, maxY, minX, minY;
 	private Omhullende omhullende;
 
 	@Before
@@ -16,6 +16,10 @@ public class OmhullendeTest {
 		linkerBovenhoek = new Punt(200, 200);
 		breedte = 20;
 		hoogte = 40;
+		maxX = 220;
+		maxY = 240;
+		minX = 200;
+		minY = 200;
 		omhullende = new Omhullende(linkerBovenhoek,breedte, hoogte);
 	}
 
@@ -82,5 +86,25 @@ public class OmhullendeTest {
 	@Test
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		assertFalse(omhullende.equals(null));
+	}
+	
+	@Test
+	public void getMaximumX_moet_juiste_waarde_teruggeven(){
+		assertEquals(omhullende.getMaximumX(), maxX);
+	}
+	
+	@Test
+	public void getMaximumY_moet_juiste_waarde_teruggeven(){
+		assertEquals(omhullende.getMaximumY(), maxY);
+	}
+
+	@Test
+	public void getMinimumX_moet_juiste_waarde_teruggeven(){
+		assertEquals(omhullende.getMinimumY(), minX);
+	}
+
+	@Test
+	public void getMinimumY_moet_juiste_waarde_teruggeven(){
+		assertEquals(omhullende.getMinimumY(), minY);
 	}
 }
