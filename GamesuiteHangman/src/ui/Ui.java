@@ -7,7 +7,10 @@ import domain.Punt;
 import domain.Rechthoek;
 
 public class Ui {
-	public static void main(String[] args) {
+	public Ui (){
+		
+	}
+	public void createVorm(){
 		String x = JOptionPane.showInputDialog(" x coordinaat van het punt : ");
 		String y = JOptionPane.showInputDialog(" y coordinaat van het punt : ");
 		int newX = Integer.parseInt(x);
@@ -42,5 +45,6 @@ public class Ui {
 			break;
 		}
 		JOptionPane.showMessageDialog(null, "U heeft een correct "+vorm+" aangemaakt: " + o.toString());
+	
 	}
 }
