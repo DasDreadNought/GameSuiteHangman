@@ -10,8 +10,8 @@ public class Omhullende {
 	
 	public Omhullende(Punt linkerBovenhoek , int breedte, int hoogte){
 		setLinkerBovenhoek(linkerBovenhoek);
-		setHoogte(hoogte);
 		setBreedte(breedte);
+		setHoogte(hoogte);
 	}
 
 
@@ -54,14 +54,26 @@ public class Omhullende {
 		if(hoogte < 0) {throw new DomainException();}
 		this.hoogte = hoogte;
 	}
-
+	
+	public int getMaximumX(){
+		return linkerBovenhoek.getX() + breedte;
+	}
+	
+	public int getMaximumY(){
+		return linkerBovenhoek.getY() + hoogte;
+	}
+	
+	public int getMinimumX(){
+		return linkerBovenhoek.getX();
+	}
+	
+	public int getMinimumY(){
+		return linkerBovenhoek.getY();
+	}
 
 	@Override
 	public String toString() {
 		return "Omhullende: " + linkerBovenhoek.toString() + ", " + breedte + ", " + hoogte + " ";
-	}
-	
-	
-	
+	}	
 	
 }

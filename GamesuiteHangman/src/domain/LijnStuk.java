@@ -1,6 +1,6 @@
 package domain;
 
-public class LijnStuk {
+public class LijnStuk extends Vorm{
 	private Punt start;
 	private Punt eind;
 	
@@ -29,14 +29,15 @@ public class LijnStuk {
 		return "LijnStuk [start=" + start.toString() + ", eind=" + eind.toString() + "]";
 	}
 
-	public boolean equals(LijnStuk o){
-		if(o == null){
-			return false;
+
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof LijnStuk&&o!=null){
+			if((((LijnStuk) o).getStartPunt().equals(this.start) && ((LijnStuk) o).getEindPunt().equals(this.eind)) || 
+					(((LijnStuk) o).getStartPunt().equals(this.eind) && ((LijnStuk) o).getEindPunt().equals(this.start))){
+				return true;
+			}
 		}
-		if(o.getEindPunt().equals(eind) && o.getStartPunt().equals(start) || o.getEindPunt().equals(start) && o.getStartPunt().equals(eind)){
-			return true;
-		}
-		
 		return false;
 	}
 
