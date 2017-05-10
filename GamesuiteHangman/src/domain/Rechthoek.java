@@ -43,13 +43,19 @@ public class Rechthoek {
 		return linkerbovenhoek;
 	}
 	
+	public Omhullende getOmhullende(){
+		Omhullende o = new Omhullende(linkerbovenhoek, breedte, hoogte);
+		return o;
+	}
+	
 	public boolean equals(Rechthoek rechthoek){
 		return (rechthoek != null && rechthoek.getBreedte()==breedte &&  rechthoek.getHoogte()==hoogte && rechthoek.getLinkerBovenhoek().equals(linkerbovenhoek));
 	}
 
 	@Override
 	public String toString() {
-		return "Rechthoek: positie: "+linkerbovenhoek+" - breedte: "+breedte+ " - hoogte: "+hoogte;
+		return "Rechthoek: positie: " + linkerbovenhoek.toString() + " - breedte: " + breedte + " - hoogte: " + hoogte
+				+ "\n" + this.getOmhullende().toString();
 	}
 	
 	
