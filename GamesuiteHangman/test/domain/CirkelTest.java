@@ -46,7 +46,7 @@ public class CirkelTest {
 		
 		
 	}
-	@Test (expected = DomainException.class)
+	@Test
 	public void Cirkel_Niet_Gelijk_bij_null()  {
 		assertFalse(new Cirkel(p1, r1).equals(null));
 	}
