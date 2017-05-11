@@ -6,7 +6,7 @@ import domain.WoordenLijst;
 
 public class WoordenLezer {
 	private String bestandsNaam;
-	 private Scanner s;
+	private Scanner s;
 
 	public WoordenLezer(String bestandsNaam) {
 		this.bestandsNaam = bestandsNaam;
@@ -15,7 +15,9 @@ public class WoordenLezer {
 
 	public WoordenLijst lees() {
 		WoordenLijst wl = new WoordenLijst();
+		while(s.hasNextLine()){
 		wl.voegToe((s.nextLine()));
+		}
 		return wl;
 	}
 	public String getBestandsNaam(String bestandsNaam){
