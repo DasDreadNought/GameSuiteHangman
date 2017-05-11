@@ -1,6 +1,8 @@
 package domain;
 
-public class Rechthoek extends Vorm{
+import java.awt.Graphics;
+
+public class Rechthoek extends Vorm implements Drawable{
 	private int breedte, hoogte;
 	private Punt linkerbovenhoek;
 	public Rechthoek(Punt linkerboverhoek, int breedte, int hoogte){
@@ -63,7 +65,11 @@ public class Rechthoek extends Vorm{
 				 + super.toString();
 	}
 	
-	
+	public void teken(Graphics graphics){
+		graphics.drawRect(this.getLinkerBovenhoek().getX(), this
+				.getLinkerBovenhoek().getY(), this.getBreedte(), this
+				.getHoogte());
+	}
 	
 	
 }

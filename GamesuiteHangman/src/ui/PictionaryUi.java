@@ -11,8 +11,8 @@ public class PictionaryUi {
 	private Ui ui;
 	
 	public PictionaryUi( Speler speler){
-		ui = new Ui();
 		this.tekening = new Tekening(JOptionPane.showInputDialog("Geef de Naam van je tekening:"));
+		ui = new Ui(speler,this.tekening);
 		input();
 		
 	}
@@ -30,7 +30,7 @@ public class PictionaryUi {
 				break;
 			case "2":
 			case "tekening tonen":
-				JOptionPane.showConfirmDialog(null, tekening.toString());
+				ui.toonVorm();
 				break;
 			case "0":
 				loop=false;
