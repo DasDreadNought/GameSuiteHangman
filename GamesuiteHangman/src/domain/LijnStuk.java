@@ -1,6 +1,6 @@
 package domain;
 
-public class LijnStuk extends Vorm{
+public class LijnStuk extends Vorm implements Drawable{
 	private Punt start;
 	private Punt eind;
 	
@@ -70,6 +70,9 @@ public class LijnStuk extends Vorm{
 			}
 		}
 		return false;
+	}
+	public void teken(Graphics graphics){
+		
 	}
 
 }
