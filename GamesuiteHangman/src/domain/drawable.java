@@ -1,5 +1,7 @@
 package domain;
 
-public interface drawable {
+import java.awt.Graphics;
 
+public interface Drawable {
+	public void teken(Graphics g);
 }

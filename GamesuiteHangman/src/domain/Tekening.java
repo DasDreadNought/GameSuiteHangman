@@ -79,7 +79,7 @@ public class Tekening implements Drawable{
 	@Override
 	public void teken(Graphics g) {
 		for(Vorm v: vormen){
-			v.teken(g);
+			if(v.isZichtbaar()) v.teken(g);
 		}
 		
 	}
