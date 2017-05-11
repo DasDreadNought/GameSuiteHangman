@@ -1,6 +1,8 @@
 package domain;
 
-public class LijnStuk extends Vorm implements Drawable{
+import java.awt.Graphics;
+
+public class LijnStuk extends Vorm  implements Drawable{
 	private Punt start;
 	private Punt eind;
 	
@@ -72,7 +74,9 @@ public class LijnStuk extends Vorm implements Drawable{
 		return false;
 	}
 	public void teken(Graphics graphics){
-		
+		graphics.drawLine(this.getStartPunt().getX(), this
+				.getStartPunt().getY(), this.getEindPunt().getX(), this
+				.getEindPunt().getY());
 	}
 
 }
