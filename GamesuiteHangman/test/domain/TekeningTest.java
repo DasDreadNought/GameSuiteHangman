@@ -16,10 +16,6 @@ public class TekeningTest {
 	private Vorm raambalk1;
 	private Vorm raambalk2;
 	private Vorm schouwNietInTekening;
-	private Vorm xOnderMin;
-	private Vorm xBovenMax;
-	private Vorm yOnderMin;
-	private Vorm yBovenMax;
 	
 	@Before
 	public void setUp() {
@@ -31,10 +27,6 @@ public class TekeningTest {
 		raambalk1 = new LijnStuk(new Punt(210, 250), new Punt(290, 250));
 		raambalk2 = new LijnStuk(new Punt(250, 220), new Punt(250, 280));
 		schouwNietInTekening = new Rechthoek(new Punt(150, 150), 20,40);
-		xOnderMin = new Rechthoek(new Punt(-10, 20), 100, 180);
-		xBovenMax = new Rechthoek(new Punt(450, 300), 100, 180);
-		yOnderMin = new Rechthoek(new Punt(20, -10), 100, 180);
-		yBovenMax = new Rechthoek(new Punt(300, 450), 100, 180);
 	}
 
 	@Test
@@ -108,58 +100,7 @@ public class TekeningTest {
 		huisMetSchouw.verwijder(schouwNietInTekening);
 		assertTrue(huis.equals(huisMetSchouw));
 	}
-	@Test (expected = DomainException.class)
-	public void voegToe_moet_exception_gooien_als_minimumX_van_omhullende_van_de_vorm_kleiner_is_dan_de_minimumX_van_de_tekening(){
-		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
-		huisMetSchouw.voegToe(gebouw);
-		huisMetSchouw.voegToe(dak);
-		huisMetSchouw.voegToe(deur);
-		huisMetSchouw.voegToe(raam);
-		huisMetSchouw.voegToe(deurknop);
-		huisMetSchouw.voegToe(raambalk1);
-		huisMetSchouw.voegToe(raambalk2);
-		huisMetSchouw.voegToe(schouwNietInTekening);
-		huisMetSchouw.voegToe(xOnderMin);
-	}
-	@Test (expected = DomainException.class)
-	public void voegToe_moet_exception_gooien_als_maximumX_van_omhullende_van_de_vorm_groter_is_dan_de_maximumX_van_de_tekening(){
-		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
-		huisMetSchouw.voegToe(gebouw);
-		huisMetSchouw.voegToe(dak);
-		huisMetSchouw.voegToe(deur);
-		huisMetSchouw.voegToe(raam);
-		huisMetSchouw.voegToe(deurknop);
-		huisMetSchouw.voegToe(raambalk1);
-		huisMetSchouw.voegToe(raambalk2);
-		huisMetSchouw.voegToe(schouwNietInTekening);
-		huisMetSchouw.voegToe(xBovenMax);
-	}
-	@Test (expected = DomainException.class)
-	public void voegToe_moet_exception_gooien_als_minimumY_van_omhullende_van_de_vorm_kleiner_is_dan_de_minimumY_van_de_tekening(){
-		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
-		huisMetSchouw.voegToe(gebouw);
-		huisMetSchouw.voegToe(dak);
-		huisMetSchouw.voegToe(deur);
-		huisMetSchouw.voegToe(raam);
-		huisMetSchouw.voegToe(deurknop);
-		huisMetSchouw.voegToe(raambalk1);
-		huisMetSchouw.voegToe(raambalk2);
-		huisMetSchouw.voegToe(schouwNietInTekening);
-		huisMetSchouw.voegToe(yOnderMin);
-	}
-	@Test (expected = DomainException.class)
-	public void voegToe_moet_exception_gooien_als_maximumY_van_omhullende_van_de_vorm_groter_is_dan_de_maximumY_van_de_tekening(){
-		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
-		huisMetSchouw.voegToe(gebouw);
-		huisMetSchouw.voegToe(dak);
-		huisMetSchouw.voegToe(deur);
-		huisMetSchouw.voegToe(raam);
-		huisMetSchouw.voegToe(deurknop);
-		huisMetSchouw.voegToe(raambalk1);
-		huisMetSchouw.voegToe(raambalk2);
-		huisMetSchouw.voegToe(schouwNietInTekening);
-		huisMetSchouw.voegToe(yBovenMax);
-	}
+
 
 	public Tekening createHuisMetSchouw() {
 		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
