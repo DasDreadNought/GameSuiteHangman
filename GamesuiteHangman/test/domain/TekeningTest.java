@@ -110,18 +110,54 @@ public class TekeningTest {
 	}
 	@Test (expected = DomainException.class)
 	public void voegToe_moet_exception_gooien_als_minimumX_van_omhullende_van_de_vorm_kleiner_is_dan_de_minimumX_van_de_tekening(){
+		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
+		huisMetSchouw.voegToe(gebouw);
+		huisMetSchouw.voegToe(dak);
+		huisMetSchouw.voegToe(deur);
+		huisMetSchouw.voegToe(raam);
+		huisMetSchouw.voegToe(deurknop);
+		huisMetSchouw.voegToe(raambalk1);
+		huisMetSchouw.voegToe(raambalk2);
+		huisMetSchouw.voegToe(schouwNietInTekening);
 		huisMetSchouw.voegToe(xOnderMin);
 	}
 	@Test (expected = DomainException.class)
 	public void voegToe_moet_exception_gooien_als_maximumX_van_omhullende_van_de_vorm_groter_is_dan_de_maximumX_van_de_tekening(){
+		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
+		huisMetSchouw.voegToe(gebouw);
+		huisMetSchouw.voegToe(dak);
+		huisMetSchouw.voegToe(deur);
+		huisMetSchouw.voegToe(raam);
+		huisMetSchouw.voegToe(deurknop);
+		huisMetSchouw.voegToe(raambalk1);
+		huisMetSchouw.voegToe(raambalk2);
+		huisMetSchouw.voegToe(schouwNietInTekening);
 		huisMetSchouw.voegToe(xBovenMax);
 	}
 	@Test (expected = DomainException.class)
 	public void voegToe_moet_exception_gooien_als_minimumY_van_omhullende_van_de_vorm_kleiner_is_dan_de_minimumY_van_de_tekening(){
+		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
+		huisMetSchouw.voegToe(gebouw);
+		huisMetSchouw.voegToe(dak);
+		huisMetSchouw.voegToe(deur);
+		huisMetSchouw.voegToe(raam);
+		huisMetSchouw.voegToe(deurknop);
+		huisMetSchouw.voegToe(raambalk1);
+		huisMetSchouw.voegToe(raambalk2);
+		huisMetSchouw.voegToe(schouwNietInTekening);
 		huisMetSchouw.voegToe(yOnderMin);
 	}
 	@Test (expected = DomainException.class)
 	public void voegToe_moet_exception_gooien_als_maximumY_van_omhullende_van_de_vorm_groter_is_dan_de_maximumY_van_de_tekening(){
+		Tekening huisMetSchouw = new Tekening("huisMetSchouw");
+		huisMetSchouw.voegToe(gebouw);
+		huisMetSchouw.voegToe(dak);
+		huisMetSchouw.voegToe(deur);
+		huisMetSchouw.voegToe(raam);
+		huisMetSchouw.voegToe(deurknop);
+		huisMetSchouw.voegToe(raambalk1);
+		huisMetSchouw.voegToe(raambalk2);
+		huisMetSchouw.voegToe(schouwNietInTekening);
 		huisMetSchouw.voegToe(yBovenMax);
 	}
 

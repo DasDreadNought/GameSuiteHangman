@@ -29,8 +29,14 @@ public class Tekening {
 	}
 	
 	public void voegToe(Vorm v){
-		if(v!=null) vormen.add(v);
-		else throw new IllegalArgumentException("Vorm is null");
+		if(v==null ||
+				v.getOmhullende().getMaximumX() > 399 ||
+				v.getOmhullende().getMinimumX() < 0 ||
+				v.getOmhullende().getMaximumY() > 399 ||
+				v.getOmhullende().getMinimumY() < 0){
+				throw new DomainException();
+			}
+		vormen.add(v);
 	}
 	
 	public void verwijder(Vorm v){
