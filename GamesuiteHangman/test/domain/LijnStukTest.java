@@ -11,7 +11,6 @@ public class LijnStukTest {
 	private Punt zelfdeAlsPunt1 = new Punt(10, 20);
 	private Punt punt2 = new Punt(190, 30);
 	private Punt zelfdeAlsPunt2 = new Punt(190, 30);
-	private Omhullende omhullende = new Omhullende(punt1, 180, 10);
 
 	@Test
 	public void LijnStuk_moet_lijnstuk_aanmaken_met_gegeven_startPunt_en_eindPunt() {
@@ -42,19 +41,6 @@ public class LijnStukTest {
 	public void equals_moet_false_teruggeven_als_parameter_null(){
 		LijnStuk lijnStuk = new LijnStuk(punt1, punt2);
 		assertFalse(lijnStuk.equals(null));
-	}
-	
-	@Test
-	public void equals_moet_true_teruggeven_als_begin_en_eindpunt_omgekeerd_zijn(){
-		LijnStuk lijnstuk = new LijnStuk(punt1, punt2);
-		LijnStuk lijnstuk2 = new LijnStuk(punt2, punt1);
-		assertTrue(lijnstuk.equals(lijnstuk2));
-	}
-	
-	@Test
-	public void getOmhullende_geeft_verwachte_waarden_terug(){
-		LijnStuk lijnstuk = new LijnStuk(punt1, punt2);
-		assertTrue(omhullende.equals(lijnstuk.getOmhullende()));
 	}
 }
 	
