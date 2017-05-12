@@ -1,4 +1,3 @@
-
 overerving
 statisch type
 dynamisch type
@@ -10,4 +9,4 @@ IllegalArgumentException
 NullPointerException
 junit test
 test first development
-interfac
+interface

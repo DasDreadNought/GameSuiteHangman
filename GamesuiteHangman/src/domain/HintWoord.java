@@ -9,6 +9,7 @@ public class HintWoord {
 	private ArrayList <HintLetter> hintLetters = new ArrayList();
 	
 	public HintWoord(String woord){
+		System.out.println(woord);
 		setWoord(woord);
 		char[] hulp = woord.toCharArray();
 		for(int i = 0; i < hulp.length; i++){
@@ -53,7 +54,11 @@ public class HintWoord {
 		String result = "";
 		
 		for (HintLetter e: hintLetters){
-			result += e.toChar() + " ";
+			if(e.geraden){
+				result += e.toChar() + " ";
+			} else {
+				result += "_ ";
+			}
 		}
 		
 		return result.substring(0, result.length() - 1);

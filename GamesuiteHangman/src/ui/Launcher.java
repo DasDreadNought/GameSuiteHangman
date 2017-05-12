@@ -2,7 +2,9 @@ package ui;
 
 import javax.swing.JOptionPane;
 
+import db.WoordenLezer;
 import domain.Speler;
+import domain.WoordenLijst;
 
 public class Launcher {
 
@@ -13,7 +15,9 @@ public class Launcher {
 		String keuze = (String) JOptionPane.showInputDialog(null, "Wat wilt u spelen", "input", JOptionPane.INFORMATION_MESSAGE, null, spel, null);
 		switch(keuze){
 		case "hangman":
-			HangManUi hangman= new HangManUi(speler);
+			WoordenLezer wlz = new WoordenLezer("Hangman.txt");
+			WoordenLijst wls = wlz.lees();
+			HangManUi hangman= new HangManUi(speler, wls);
 			break;
 		case "tekenen":
 			JOptionPane.showMessageDialog(null, speler.getNaam()+" zal binnekort spelen", speler.getNaam(), JOptionPane.INFORMATION_MESSAGE);

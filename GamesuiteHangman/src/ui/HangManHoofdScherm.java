@@ -3,6 +3,7 @@ package ui;
 import java.awt.BorderLayout;
 
 import domain.HangMan;
+import domain.WoordenLijst;
 
 public class HangManHoofdScherm extends GameHoofdScherm {
 
@@ -10,7 +11,7 @@ public class HangManHoofdScherm extends GameHoofdScherm {
 	
 	public HangManHoofdScherm(HangMan spel, HangmanPaneel spelpaneel){
 		super("Hangman - "+spel.getSpeler().getNaam(), spel.getTekening());	
-		
+		HangMan newSpel = spel;
 		spelpaneel.setTekenVenster(getTekenvenster());
 		this.add(spelpaneel, BorderLayout.SOUTH);
 	}

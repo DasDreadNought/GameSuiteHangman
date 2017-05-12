@@ -6,6 +6,9 @@ public class HintLetter {
 	public boolean geraden;
 	
 	public HintLetter(char letter){
+		if(letter == ' '){
+			this.geraden=true;
+		}
 		this.letter = letter;
 	}
 

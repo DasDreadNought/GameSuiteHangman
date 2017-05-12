@@ -3,6 +3,8 @@ package domain;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
+
 public class WoordenLijst {
 	ArrayList<String> lijst;
 	Random randomGen;

@@ -53,7 +53,8 @@ public class HangmanPaneel extends JPanel {
 				if(input.length() > 0){
 					guess = input.charAt(0);
 				}
-				//TODO raad
+				
+				spel.raad(guess);
 
 				woord.setText(getSpel().getHint());
 				letter.setText("");
