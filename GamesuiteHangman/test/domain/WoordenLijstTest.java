@@ -67,5 +67,9 @@ public class WoordenLijstTest {
 		assertEquals(null, woordenlijstLeeg.getRandomWoord());
 	}
 	
+	@Test 
+	public void getRandomWoord_moet_woord_teruggeven_indien_lijst_niet_leeg(){
+		assertNotEquals(null, woordenlijstMetGeldigeWoorden.getRandomWoord());
+	}
 
 }
